@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import {
   BrowserRouter,
@@ -6,15 +5,19 @@ import {
   Route
 } from "react-router-dom";
 import Home from './Pages/Home/Home';
-import Header from './Pages/Header/Header';
-import Footer from './Pages/Footer/Footer';
-
+import Products from './Pages/Products/Products';
+import Review from './Pages/Review/Review'
+import Cart from './Pages/Cart/Cart';
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
       <Routes>
       <Route path="/" element={<Home/>} />
+      <Route path="/home" element={<Home/>} />
+      <Route path="/product" element={<Products/>} />
+      <Route path="/product/:productId" element={<Cart/>} />
+      <Route path="/review" element={<Review/>} />
       </Routes>
       </BrowserRouter>
     </div>

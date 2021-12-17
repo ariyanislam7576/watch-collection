@@ -1,8 +1,9 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-import SingleReviewForHome from './SingleReviewForHome/SingleReviewForHome';
-const Review = [
+import SingleReview from './SingleReview/SingleReview';
+
+
+const ReviewCollection = [
     {
         id: 1,
         name: "Jon Dalton",
@@ -28,19 +29,18 @@ const Review = [
 
     },
 ]
-const ReviewForHome = () => {
+const Review = () => {
     return (
         <Container className='my-5'>
             <h2 className='mb-5'>Customar Review</h2>
             <Row xs={1} md={3} className="g-4">
                 {
-                    Review.map(r => <SingleReviewForHome key={r.id}
+                    ReviewCollection.map(r => <SingleReview key={r.id}
                         Review={r} />)
                 }
             </Row>
-            <button className='btn-info mt-4'><NavLink className='text-decoration-none text-white' to='/review'>More Review</NavLink></button>
         </Container>
     );
 };
 
-export default ReviewForHome;
+export default Review;
