@@ -1,10 +1,10 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
+import useAuth from '../../Hooks/useAuth';
 
 const Header = () => {
-  const {user, logOut} = useFirebase({})
+  const {user, logOut} = useAuth()
     return (
             <div>
       <Navbar bg="dark" expand="sm">
@@ -15,9 +15,12 @@ const Header = () => {
             <Nav className="me-auto">
               <NavLink className='m-3 text-white text-decoration-none' to="/home">Home</NavLink>
               <NavLink className='m-3 text-white text-decoration-none' to="/dashboard">Dashboard</NavLink> 
-              <NavLink className='m-3 text-white text-decoration-none' to="/login">Log in</NavLink>
             </Nav>
-            {user?.displayName && <button onClick={logOut}>logout</button>
+            {user?.displayName ? <button onClick={logOut}>logout</button>
+            :
+            <NavLink className='m-3 text-white text-decoration-none' to="/login"> <button>Log in</button> </NavLink>
+           }{
+             user.displayName && <img width='40px' className='rounded-circle' src={user.photoURL} alt="" />
            }
             
           </Navbar.Collapse>

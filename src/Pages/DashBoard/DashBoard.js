@@ -13,10 +13,12 @@ import ListItemText from '@mui/material/ListItemText';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { NavLink, Outlet } from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 
 const drawerWidth = 240;
 
 function ResponsiveDrawer(props) {
+const {logOut} = useAuth()
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -34,11 +36,6 @@ function ResponsiveDrawer(props) {
           to={`/dashboard/payment`}>
           Payment
         </NavLink>,
-          <NavLink
-          className='text-dark text-decoration-none'
-          to={`/dashboard/myorder`}>
-          My Order
-        </NavLink>,
         <NavLink className='text-dark text-decoration-none' to={`/dashboard/addreview`}>Review</NavLink>,].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
@@ -49,10 +46,11 @@ function ResponsiveDrawer(props) {
       </List>
       <Divider />
       <List>
-        {[<NavLink className='text-dark text-decoration-none' to={`/dashboard/manageorder`}>Manage Order</NavLink>,
-        <NavLink className='text-dark text-decoration-none' to={`/dashboard/makeadmin`}>Make Admin</NavLink>,
-        <NavLink className='text-dark text-decoration-none' to={`/dashboard/manageproduct`}>Manage Product</NavLink>,
-        <NavLink className='text-dark text-decoration-none' to={`/dashboard/addproduct`}>Add Product</NavLink>
+        {[
+        // <NavLink className='text-dark text-decoration-none' to={`/dashboard/manageorder`}>Manage Order</NavLink>,
+        // <NavLink className='text-dark text-decoration-none' to={`/dashboard/makeadmin`}>Make Admin</NavLink>,
+        // <NavLink className='text-dark text-decoration-none' to={`/dashboard/manageproduct`}>Manage Product</NavLink>,
+        // <NavLink className='text-dark text-decoration-none' to={`/dashboard/addproduct`}>Add Product</NavLink>
       ].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
@@ -60,7 +58,7 @@ function ResponsiveDrawer(props) {
             <ListItemText primary={text} />
           </ListItem>
         ))}
-        <button>Logout</button>
+        <button onClick={logOut}>Logout</button>
       </List>
     </div>
   );

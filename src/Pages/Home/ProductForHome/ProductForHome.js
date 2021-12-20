@@ -20,7 +20,7 @@ const ProductForHome = () => {
                     ></SingleProductForHome>)
                 }
             </Row>
-            <button className='btn-info mt-4'><NavLink className='text-decoration-none text-white' to='/product'>More Product</NavLink></button>
+            <button className='mt-4'><NavLink className='text-decoration-none text-dark' to='/product'>More Product</NavLink></button>
         </Container>
 
 

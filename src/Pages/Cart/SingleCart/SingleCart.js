@@ -3,7 +3,7 @@ import { Card, Col } from 'react-bootstrap';
 
 const SingleCart = (props) => {
     console.log(props);
-    const {name,img,dis,price} = props.products
+    const {name,img,description,price} = props.watch
     return (
         <Col>
             <Card>
@@ -12,7 +12,7 @@ const SingleCart = (props) => {
                     <Card.Title>{name}</Card.Title>
                     <h3>Price: ${price}</h3>
                     <Card.Text>
-                        {dis}
+                        {description}
                     </Card.Text>
                 </Card.Body>
             </Card>

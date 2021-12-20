@@ -1,10 +1,9 @@
-import { getDefaultNormalizer } from '@testing-library/dom';
 import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 const SingleProductForHome = (props) => {
-    const { id, name, img, description, price } = props.product
+    const { _id, name, img, description, price } = props.product
     return (
         <Col>
             <Card>
@@ -16,7 +15,7 @@ const SingleProductForHome = (props) => {
                         {description.slice(0,100)}
                     </Card.Text>
                     <button className="btn-info rounded">
-                        <NavLink className='text-decoration-none text-dark' to={`/product/${id}`}>Order</NavLink> 
+                        <NavLink className='text-decoration-none text-dark' to={`/product/${_id}`}>Order</NavLink> 
                         </button>
                 </Card.Body>
             </Card>

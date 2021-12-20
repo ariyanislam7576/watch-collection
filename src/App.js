@@ -43,7 +43,7 @@ function App() {
           </Route>
           <Route path={`/dashboard/addreview`}element={<AddReview></AddReview>} > 
           </Route>
-          <Route path={`/dashboard/myorder`}element={<MyOrder/>} > 
+          <Route path={`/dashboard`}element={<MyOrder/>} > 
           </Route>
           <Route path={`/dashboard/manageorder`} element={<ManageOrder></ManageOrder>}>
           </Route>
@@ -54,7 +54,6 @@ function App() {
       </Route>
       
       </Routes>
-      <Footer/>
       </BrowserRouter>
       </AuthProvidor>
     </div>

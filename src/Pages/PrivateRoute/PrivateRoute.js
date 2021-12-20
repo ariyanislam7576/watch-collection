@@ -1,10 +1,10 @@
 import { CircularProgress } from '@mui/material';
 import React from 'react';
 import {useLocation, Navigate} from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
+import useAuth from '../../Hooks/useAuth';
 
 const PrivateRoute = ({children, ...rest}) => {
-    const {user,loading} = useFirebase({})
+    const {user,loading} = useAuth()
     let location = useLocation()
     if(loading){ return <CircularProgress></CircularProgress>}
     if(user.email){

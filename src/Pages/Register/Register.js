@@ -1,12 +1,18 @@
 import React from 'react';
 import { Container, Row } from 'react-bootstrap';
-import { NavLink } from 'react-router-dom';
-import useFirebase from '../../Hooks/useFirebase';
+import { NavLink , useNavigate, useLocation} from 'react-router-dom';
+import useAuth from '../../Hooks/useAuth';
 
 const Register = () => {
-        const {signInUsingGoogle} = useFirebase({})
+        const {signInWithGoogle} = useAuth()
+        const location = useLocation()
+        const naviagate = useNavigate()
+        
         const handleSubmit = e =>{
             e.preventDefault()
+        }
+        const handleGoogleSingIn = () => {
+            signInWithGoogle(location, naviagate)
         }
     return (
         <Container>
@@ -26,7 +32,7 @@ const Register = () => {
                         <input type="submit" value="Login" />
                     </form>
                     <p>Alredy registered? <NavLink to='/login'>Login</NavLink> </p>
-                    <button onClick={signInUsingGoogle} className="btn-secondary">
+                    <button onClick={handleGoogleSingIn} className="btn-secondary">
                        Signin with Google
                     </button>
                 </div>
