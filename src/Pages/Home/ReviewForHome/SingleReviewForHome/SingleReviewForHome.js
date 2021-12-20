@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
 const SingleReviewForHome = (props) => {
-    const {name, review , img, star} = props.Review
+    const {name, description , img, star} = props.Review
     return (
         <Col>
             <Card>
@@ -10,7 +10,7 @@ const SingleReviewForHome = (props) => {
                 <Card.Body>
                     <Card.Title>{name}</Card.Title>
                     <Card.Text>
-                        {review}
+                        {description.slice(0,100)}
                     </Card.Text>
                 </Card.Body>
             </Card>

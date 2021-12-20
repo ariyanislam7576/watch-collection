@@ -6,7 +6,7 @@ import SingleProductForHome from './SingleProductForHome/SingleProductForHome';
 const ProductForHome = () => {
     const [productForHome, setProductForHome] = useState([])
     useEffect(()=>{
-        fetch('https://raw.githubusercontent.com/ariyanislam7576/watch.json/main/Watch.json')
+        fetch('http://localhost:4500/addedproduct')
         .then(res => res.json())
         .then(data => setProductForHome(data))
     },[])
@@ -15,7 +15,7 @@ const ProductForHome = () => {
             <h2 className='mb-5'>Our products</h2>
             <Row xs={1} md={3} className="g-4">
                 {
-                    productForHome.map(p => <SingleProductForHome key={p.id}
+                    productForHome.slice(0,6).map(p => <SingleProductForHome key={p._id}
                         product={p}
                     ></SingleProductForHome>)
                 }

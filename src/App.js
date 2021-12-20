@@ -20,6 +20,8 @@ import MakeAdmin from './Pages/DashBoard/AdminRoute/MakeAdmin/MakeAdmin';
 import AddReview from './Pages/DashBoard/AddReview/AddReview'
 import ManageOrder from './Pages/DashBoard/AdminRoute/ManageOrder/ManageOrder'
 import ManageProduct from './Pages/DashBoard/AdminRoute/ManageProduct/ManageProduct'
+import AddProduct from './Pages/DashBoard/AdminRoute/AddProduct/AddProduct';
+import MyOrder from './Pages/DashBoard/MyOrder/MyOrder';
 function App() {
   return (
     <div className="App">
@@ -41,9 +43,13 @@ function App() {
           </Route>
           <Route path={`/dashboard/addreview`}element={<AddReview></AddReview>} > 
           </Route>
+          <Route path={`/dashboard/myorder`}element={<MyOrder/>} > 
+          </Route>
           <Route path={`/dashboard/manageorder`} element={<ManageOrder></ManageOrder>}>
           </Route>
           <Route path={`/dashboard/manageproduct`} element={<ManageProduct></ManageProduct>}>
+          </Route>
+          <Route path={`/dashboard/addproduct`} element={<AddProduct/>}>
           </Route>
       </Route>
       

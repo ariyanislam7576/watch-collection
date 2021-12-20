@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Col } from 'react-bootstrap';
 
 const Product = (props) => {
-    const { name, img, dis, price } = props.product
+    const { name, img, description, price } = props.product
     return (
         <Col>
             <Card>
@@ -11,7 +11,7 @@ const Product = (props) => {
                     <Card.Title>{name}</Card.Title>
                     <h5>Price ${price}</h5>
                     <Card.Text>
-                        {dis}
+                        {description.slice(0,100)}
                     </Card.Text>
                 </Card.Body>
             </Card>

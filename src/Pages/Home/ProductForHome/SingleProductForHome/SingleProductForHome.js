@@ -4,7 +4,7 @@ import { Card, Col } from 'react-bootstrap';
 import { NavLink } from 'react-router-dom';
 
 const SingleProductForHome = (props) => {
-    const { id, name, img, dis, price } = props.product
+    const { id, name, img, description, price } = props.product
     return (
         <Col>
             <Card>
@@ -13,7 +13,7 @@ const SingleProductForHome = (props) => {
                     <Card.Title>{name}</Card.Title>
                     <h5>Price ${price}</h5>
                     <Card.Text>
-                        {dis}
+                        {description.slice(0,100)}
                     </Card.Text>
                     <button className="btn-info rounded">
                         <NavLink className='text-decoration-none text-dark' to={`/product/${id}`}>Order</NavLink> 
