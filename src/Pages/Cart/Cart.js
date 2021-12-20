@@ -11,7 +11,7 @@ const Cart = () => {
     const [products, setProducts] = useState([])
     const { register, handleSubmit, reset, } = useForm();
     useEffect(() => {
-        fetch(`http://localhost:4500/addedproduct/${productId}`)
+        fetch(`https://mysterious-citadel-30102.herokuapp.com/addedproduct/${productId}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data);
@@ -19,7 +19,7 @@ const Cart = () => {
             })
     }, [])
     const onSubmit = data => {
-        axios.post('http://localhost:4500/myorders', data)
+        axios.post('https://mysterious-citadel-30102.herokuapp.com/myorders', data)
             .then(res => {
                 if (res.data) {
                     alert('Order placed')

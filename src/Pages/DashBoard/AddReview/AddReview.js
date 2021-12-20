@@ -7,7 +7,7 @@ const AddReview = () => {
     const { register, handleSubmit, reset, } = useForm();
     const onSubmit = data => {
         console.log(data);
-        axios.post('http://localhost:4500/addedreview',data)
+        axios.post('https://mysterious-citadel-30102.herokuapp.com/addedreview',data)
          .then(res => {
              console.log(res);
         if(res.data){

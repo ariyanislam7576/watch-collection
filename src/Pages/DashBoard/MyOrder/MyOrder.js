@@ -8,7 +8,7 @@ const MyOrder = () => {
 
     const [order, setOrder] = useState([])
     useEffect(() => {
-        fetch(`http://localhost:4500/myorders?email=${user.email}`)
+        fetch(`https://mysterious-citadel-30102.herokuapp.com/myorders?email=${user.email}`)
             .then(res => res.json())
             .then(data => {
                 setOrder(data)
@@ -16,7 +16,7 @@ const MyOrder = () => {
     }, [])
 
     const handleDelete = id => {
-        const url = `http://localhost:4500/myorders/${id}`
+        const url = `https://mysterious-citadel-30102.herokuapp.com/myorders/${id}`
         const procced = window.confirm('are you sure??')
         if (procced) {
             fetch(url, {

@@ -6,7 +6,7 @@ import SingleProductForHome from './SingleProductForHome/SingleProductForHome';
 const ProductForHome = () => {
     const [productForHome, setProductForHome] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:4500/addedproduct')
+        fetch('https://mysterious-citadel-30102.herokuapp.com/addedproduct')
         .then(res => res.json())
         .then(data => setProductForHome(data))
     },[])

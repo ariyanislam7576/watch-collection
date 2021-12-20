@@ -4,7 +4,7 @@ import Product from './product/Product';
 const Products = () => {
     const [watch, setWatch] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:4500/addedproduct')
+        fetch('https://mysterious-citadel-30102.herokuapp.com/addedproduct')
         .then(res => res.json())
         .then(data => setWatch(data))
     },[])

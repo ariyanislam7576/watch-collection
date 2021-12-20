@@ -6,7 +6,7 @@ import SingleReviewForHome from './SingleReviewForHome/SingleReviewForHome';
 const ReviewForHome = () => {
     const [review , setReview] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:4500/addedreview')
+        fetch('https://mysterious-citadel-30102.herokuapp.com/addedreview')
         .then(res => res.json())
         .then(data => setReview(data))
     },[])
