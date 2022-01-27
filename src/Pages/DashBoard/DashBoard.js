@@ -47,10 +47,10 @@ const {logOut} = useAuth()
       <Divider />
       <List>
         {[
-        // <NavLink className='text-dark text-decoration-none' to={`/dashboard/manageorder`}>Manage Order</NavLink>,
-        // <NavLink className='text-dark text-decoration-none' to={`/dashboard/makeadmin`}>Make Admin</NavLink>,
-        // <NavLink className='text-dark text-decoration-none' to={`/dashboard/manageproduct`}>Manage Product</NavLink>,
-        // <NavLink className='text-dark text-decoration-none' to={`/dashboard/addproduct`}>Add Product</NavLink>
+        <NavLink className='text-dark text-decoration-none' to={`/dashboard/manageorder`}>Manage Order</NavLink>,
+        <NavLink className='text-dark text-decoration-none' to={`/dashboard/makeadmin`}>Make Admin</NavLink>,
+        <NavLink className='text-dark text-decoration-none' to={`/dashboard/manageproduct`}>Manage Product</NavLink>,
+        <NavLink className='text-dark text-decoration-none' to={`/dashboard/addproduct`}>Add Product</NavLink>
       ].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
